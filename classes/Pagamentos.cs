@@ -8,7 +8,7 @@ namespace POO_Abstracao.classes
         protected float valor;
 
         public string Cancelar(){
-            return $"Cancelamento feito em {data}";
+            return $"Cancelamento feito!!";
         }
 
         public abstract string Desconto(float valor);
