@@ -7,7 +7,7 @@ namespace POO_Abstracao.classes
             get{return codigoDeBarras;}
             set{codigoDeBarras = value;}
         }
-        public void Registrar(string valor){
+        public void Registro(string valor){
             this.codigoDeBarras = valor;
         }
 

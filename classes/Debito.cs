@@ -4,7 +4,7 @@ namespace POO_Abstracao.classes
     public class Debito : Cartao
     {
         private float saldo = 600;
-        public float Saldo{
+        public float SaldoEmConta{
             get{return saldo;}
             set{saldo = value;}
         }

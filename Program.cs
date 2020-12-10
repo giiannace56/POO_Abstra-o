@@ -7,11 +7,11 @@ namespace POO_Abstracao
     {
         static void Main(string[] args)
         {
-            Boleto boleto = new Boleto();
+            Boleto bol = new Boleto();
 
-            Credito credito = new Credito();
+            Credito cre = new Credito();
 
-            Debito debito = new Debito();
+            Debito deb = new Debito();
 
             string resposta = "";
 
@@ -32,13 +32,13 @@ namespace POO_Abstracao
                         {
                             case 1:
                                 Console.Write("Digite a bandeira: ");
-                                credito.bandeira = Console.ReadLine();
+                                cre.bandeira = Console.ReadLine();
                                 Console.Write("Digite o número do cartão: ");
-                                credito.numero = Console.ReadLine();
+                                cre.numero = Console.ReadLine();
                                 Console.Write("Digite o nome do titular do cartão: ");
-                                credito.titular = Console.ReadLine();
+                                cre.titular = Console.ReadLine();
                                 Console.Write("Digite o cvv: ");
-                                credito.cvv = Console.ReadLine();
+                                cre.cvv = Console.ReadLine();
 
                                 Console.WriteLine("Seu cartão foi salvo no sistema!");
                                 Console.WriteLine("Deseja voltar para o menu? [s/n] ");
@@ -47,13 +47,13 @@ namespace POO_Abstracao
 
                             case 2:
                                 Console.Write("Digite a bandeira: ");
-                                debito.bandeira = Console.ReadLine();
+                                deb.bandeira = Console.ReadLine();
                                 Console.Write("Digite o número do cartão: ");
-                                debito.numero = Console.ReadLine();
+                                deb.numero = Console.ReadLine();
                                 Console.Write("Digite o nome do titular do cartão: ");
-                                debito.titular = Console.ReadLine();
+                                deb.titular = Console.ReadLine();
                                 Console.Write("Digite o cvv: ");
-                                debito.cvv = Console.ReadLine();
+                                deb.cvv = Console.ReadLine();
 
                                 Console.WriteLine("Seu cartão foi salvo no sistema!");
                                 Console.WriteLine("Deseja voltar para o menu? [s/n] ");
@@ -70,7 +70,7 @@ namespace POO_Abstracao
 
                     case 2:
                         Console.Write("Insira a linha digitável do seu boleto: ");
-                        boleto.CodigoDeBarras = Console.ReadLine();
+                        bol.CodigoDeBarras = Console.ReadLine();
                         Console.WriteLine("Seu boleto foi registrado!");
 
                         Console.WriteLine("Deseja voltar para o menu? [s/n] ");
@@ -87,7 +87,7 @@ namespace POO_Abstracao
                                 Console.WriteLine("Qual o valor do produto?");
                                 int valor = int.Parse(Console.ReadLine());
 
-                                Console.WriteLine(boleto.Desconto(valor));
+                                Console.WriteLine(bol.Desconto(valor));
 
                                 Console.WriteLine("Deseja voltar para o menu? [s/n] ");
                                 resposta = Console.ReadLine();
@@ -100,7 +100,7 @@ namespace POO_Abstracao
                                 Console.WriteLine("Deseja parcelar em quantas vezes?");
                                 int parcela = int.Parse(Console.ReadLine());
 
-                                credito.Pagar(valor2, parcela);
+                                cre.Pagar(valor2, parcela);
 
                                 Console.WriteLine("Deseja voltar para o menu? [s/n] ");
                                 resposta = Console.ReadLine();                             
@@ -110,7 +110,7 @@ namespace POO_Abstracao
                                 Console.WriteLine("Qual o valor do produto?");
                                 int valor1 = int.Parse(Console.ReadLine());
 
-                                debito.Pagar(valor1);
+                                deb.Pagar(valor1);
 
                                 Console.WriteLine("Deseja voltar para o menu? [s/n] ");
                                 resposta = Console.ReadLine();
@@ -122,7 +122,7 @@ namespace POO_Abstracao
                         break;
 
                     case 4:
-                        Console.WriteLine(debito.Cancelar());
+                        Console.WriteLine(deb.Cancelar());
 
                         Console.WriteLine("Deseja voltar para o menu? [s/n] ");
                         resposta = Console.ReadLine();
@@ -136,15 +136,15 @@ namespace POO_Abstracao
                         switch (escolha3)
                         {
                             case 1:
-                                Console.WriteLine(credito.SalvarCartao());
-                                Console.WriteLine($"Limite: {credito.Limite}");
+                                Console.WriteLine(cre.SalvarCartao());
+                                Console.WriteLine($"Limite: {cre.Limite}");
 
                                 Console.WriteLine("Deseja voltar para o menu? [s/n] ");
                                 resposta = Console.ReadLine();
                                 break;
                             case 2:
-                                Console.WriteLine(debito.SalvarCartao());
-                                Console.WriteLine($"Saldo: {debito.Saldo}");
+                                Console.WriteLine(deb.SalvarCartao());
+                                Console.WriteLine($"Saldo: {deb.SaldoEmConta}");
 
                                 Console.WriteLine("Deseja voltar para o menu? [s/n] ");
                                 resposta = Console.ReadLine();
